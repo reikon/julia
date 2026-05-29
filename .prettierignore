@@ -1,0 +1,10 @@
+node_modules
+.next
+build
+.docusaurus
+dist
+.turbo
+coverage
+bun.lock
+**/*.md
+project-docs

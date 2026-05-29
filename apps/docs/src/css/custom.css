@@ -1,0 +1,41 @@
+/**
+ * Docusaurus theme wired to the shared design tokens.
+ * @julia/tokens defines --jl-* CSS variables; we map Docusaurus's Infima
+ * variables onto them so the wiki matches the Next.js landing page exactly.
+ */
+/* Relative import into the workspace package. Docusaurus's CSS loader does not
+   resolve bare package specifiers for @import, so we reference the file directly. */
+@import '../../../../packages/tokens/tokens.css';
+
+:root {
+  --ifm-color-primary: var(--jl-color-brand-500);
+  --ifm-color-primary-dark: var(--jl-color-brand-600);
+  --ifm-color-primary-darker: var(--jl-color-brand-700);
+  --ifm-color-primary-darkest: var(--jl-color-brand-800);
+  --ifm-color-primary-light: var(--jl-color-brand-400);
+  --ifm-color-primary-lighter: var(--jl-color-brand-300);
+  --ifm-color-primary-lightest: var(--jl-color-brand-200);
+
+  --ifm-font-family-base: var(--jl-font-sans);
+  --ifm-font-family-monospace: var(--jl-font-mono);
+  --ifm-background-color: var(--jl-color-bg);
+  --ifm-background-surface-color: var(--jl-color-surface);
+  --ifm-color-content: var(--jl-color-text);
+  --ifm-color-content-secondary: var(--jl-color-text-muted);
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme='dark'] {
+  --ifm-color-primary: var(--jl-color-brand-400);
+  --ifm-color-primary-dark: var(--jl-color-brand-500);
+  --ifm-color-primary-darker: var(--jl-color-brand-600);
+  --ifm-color-primary-darkest: var(--jl-color-brand-700);
+  --ifm-color-primary-light: var(--jl-color-brand-300);
+  --ifm-color-primary-lighter: var(--jl-color-brand-200);
+  --ifm-color-primary-lightest: var(--jl-color-brand-100);
+
+  --ifm-background-color: var(--jl-color-bg);
+  --ifm-color-content: var(--jl-color-text);
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}

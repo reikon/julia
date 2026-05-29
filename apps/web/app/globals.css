@@ -1,0 +1,160 @@
+:root {
+  color-scheme: light dark;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--jl-color-bg);
+  color: var(--jl-color-text);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+a {
+  color: inherit;
+}
+
+/* ---- Aurora + hero motion ---------------------------------------------- */
+/* Slow, organic drift for the background light blobs. */
+@keyframes jl-aurora-1 {
+  0% {
+    transform: translate(-8%, -6%) scale(1);
+  }
+  50% {
+    transform: translate(12%, 10%) scale(1.22);
+  }
+  100% {
+    transform: translate(-4%, 12%) scale(1.06);
+  }
+}
+@keyframes jl-aurora-2 {
+  0% {
+    transform: translate(6%, -4%) scale(1.1);
+  }
+  50% {
+    transform: translate(-12%, 8%) scale(0.92);
+  }
+  100% {
+    transform: translate(5%, -10%) scale(1.18);
+  }
+}
+@keyframes jl-aurora-3 {
+  0% {
+    transform: translate(0%, 6%) scale(1.05);
+  }
+  50% {
+    transform: translate(10%, -10%) scale(1.24);
+  }
+  100% {
+    transform: translate(-7%, 4%) scale(1);
+  }
+}
+@keyframes jl-aurora-4 {
+  0% {
+    transform: translate(4%, 2%) scale(1);
+  }
+  50% {
+    transform: translate(-8%, -6%) scale(1.16);
+  }
+  100% {
+    transform: translate(6%, 6%) scale(0.98);
+  }
+}
+
+/* Rotating conic glow behind the content. Adds continuous color movement. */
+@keyframes jl-spin {
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+/* Crisp dot-grid drift (one tile, seamless loop). */
+@keyframes jl-grid-pan {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 26px 26px;
+  }
+}
+
+/* Lively hue travel across the gradient text + primary button. */
+@keyframes jl-shimmer {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Staggered entrance. */
+@keyframes jl-rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Per-letter shatter-to-assemble for the wordmark. Reads --tx/--ty/--rot per letter. */
+@keyframes jl-assemble {
+  0% {
+    opacity: 0;
+    transform: translate(var(--tx, 0), var(--ty, 0)) rotate(var(--rot, 0)) scale(0.2);
+    filter: blur(3px);
+  }
+  60% {
+    opacity: 1;
+    filter: blur(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0) rotate(0) scale(1);
+  }
+}
+
+/* Per-word 3D roll-up for the headline. */
+@keyframes jl-word-roll {
+  0% {
+    opacity: 0;
+    transform: rotateX(-92deg) translateY(0.45em);
+    filter: blur(5px);
+  }
+  55% {
+    opacity: 1;
+    filter: blur(0);
+  }
+  100% {
+    opacity: 1;
+    transform: rotateX(0deg) translateY(0);
+  }
+}
+
+/* Soft pulse for the status dot. */
+@keyframes jl-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(139, 92, 246, 0.45);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(139, 92, 246, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .jl-animated {
+    animation: none !important;
+  }
+}

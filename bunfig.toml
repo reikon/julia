@@ -1,0 +1,4 @@
+# Bun configuration — https://bun.com/docs/runtime/bunfig
+[install]
+# Use exact-ish resolution but keep workspaces linked.
+peer = true
