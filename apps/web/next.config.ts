@@ -16,10 +16,14 @@ const nextConfig: NextConfig = {
   // Single entrypoint: serve the wiki under /doc by proxying to Docusaurus.
   // Dev mirrors prod: same rewrite shape, only the destination origin changes.
   async rewrites() {
-    // The wiki root and everything under it. The root rule's destination keeps the
-    // trailing slash (`/doc/`) on purpose: `:path*` with an empty match strips it,
-    // proxying to a slashless `/doc` which Docusaurus 301s back to `/doc/`, a loop.
-    // `:path+` (one-or-more) handles sub-pages and never matches the empty root.
+    // Proxy the wiki under /doc to the Docusaurus deployment. Verified against the
+    // Next.js 16 docs: a rewrite to an absolute URL is a true proxy (works on Vercel).
+    //
+    // Trailing-slash note: the docs' `:path*/` form loops HERE, because with
+    // trailingSlash:true Next normalizes `/doc/` and the `*` empty-match re-emits the
+    // same `/doc/`, so Next 308s `/doc/` -> `/doc/` forever. The split below avoids it:
+    //   - `/doc` matches the normalized root and proxies to `${DOCS_URL}/doc/`
+    //   - `:path+` (one-or-more) handles sub-pages and never empty-matches the root
     return [
       { source: '/doc', destination: `${DOCS_URL}/doc/` },
       { source: '/doc/:path+', destination: `${DOCS_URL}/doc/:path+` },

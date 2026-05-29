@@ -152,6 +152,38 @@ This is an informational reference about peptides and the research literature. A
 should be **educational and cite sources**, and must **not** be framed as medical advice or
 dosing instructions for human use. Keep a clear disclaimer pattern for any clinical content.
 
+## Deploying to Vercel
+
+Vercel does **not** auto-discover monorepo apps. Each deployable app is its own
+**Vercel Project**, both importing the same Git repo, each with a different
+**Root Directory**.
+
+| Project (suggested) | Root Directory | Framework  | Serves                         |
+| ------------------- | -------------- | ---------- | ------------------------------ |
+| `peptidia-web`      | `apps/web`     | Next.js    | landing page (root domain)     |
+| `peptidia-docs`     | `apps/docs`    | Docusaurus | the wiki, served under `/doc/` |
+
+Setup per project (in the Vercel dashboard, once):
+
+1. Import the repo, set **Root Directory** to the app folder (`apps/web` or `apps/docs`).
+2. The committed `apps/*/vercel.json` pins framework, build command, output dir, and
+   `turbo-ignore` (so each project only rebuilds when its files change). The build
+   commands `cd ../..` to the repo root so Turbo builds `@julia/tokens` first and Bun
+   resolves workspaces. **Root Directory must be the app folder** for these to work.
+3. Env vars:
+   - **web**: `DOCS_URL` = docs deployment origin (e.g. `https://peptidia-docs.vercel.app`),
+     `SITE_URL` = web origin (canonical/OG).
+   - **docs**: `SITE_URL` = web origin (Docusaurus `url`).
+
+Routing: the web app rewrites `/doc/:path*` to `${DOCS_URL}/doc/:path*` (see
+`apps/web/next.config.ts`), mirroring local dev. Because Docusaurus uses
+`baseUrl: '/doc/'`, the docs deployment serves at `<docs-domain>/doc/` and its bare `/`
+404s by design. Users reach the wiki through the web app at `yourdomain.com/doc`.
+
+Gotcha: the "No Output Directory named 'public'" error means the **framework preset
+reset to Other** (often after overriding the build command). Fix: set Framework Preset
+to `Docusaurus (v2)` (output `build`) for docs; `vercel.json` now pins this.
+
 ## Status / roadmap
 
 1. ✅ Decide stack & architecture; write this CLAUDE.md.

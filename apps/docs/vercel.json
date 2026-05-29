@@ -1,0 +1,7 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "docusaurus-2",
+  "buildCommand": "cd ../.. && bunx turbo run build --filter=@julia/docs",
+  "outputDirectory": "build",
+  "ignoreCommand": "cd ../.. && bunx turbo-ignore @julia/docs"
+}

@@ -10,8 +10,7 @@ dist/
 # turbo
 .turbo/
 
-# env
-.env
+# env (commit .env defaults + .env.example; ignore only local/secret overrides)
 .env.local
 .env*.local
 
