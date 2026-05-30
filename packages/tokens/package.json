@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "type": "module",
-  "description": "Single source of truth for design tokens — emits token.css (CSS variables) + typed TS exports consumed by both the Next.js/MUI app and the Docusaurus wiki.",
+  "description": "Single source of truth for design tokens. Emits token.css (CSS variables) and typed TS exports consumed by both the Next.js/MUI app and the Docusaurus wiki.",
   "exports": {
     ".": "./src/index.ts",
     "./tokens.css": "./tokens.css"

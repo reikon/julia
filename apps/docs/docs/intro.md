@@ -1,17 +1,17 @@
 ---
 slug: /
-title: Welcome to the Peptidia Wiki
+title: Welcome to the KnowPeptide Wiki
 sidebar_label: Welcome
 sidebar_position: 1
 ---
 
-# Peptidia Wiki
+# KnowPeptide Wiki
 
 An open, **evidence-backed reference for peptides**. It organizes clinical research,
 mechanisms of action, and anecdotal reports into one transparent, source-cited place.
 
 :::warning Educational use only
-Peptidia is an informational reference, **not medical advice**. Nothing here is a
+KnowPeptide is an informational reference, **not medical advice**. Nothing here is a
 recommendation to use any substance. Talk to a qualified clinician before making decisions.
 :::
 

@@ -1,31 +1,30 @@
 import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
-// Public origin (the Next.js app). The wiki is served under /doc via a Next rewrite,
-// so baseUrl is '/doc/' both locally (proxied to :3001) and in production.
-const SITE_URL = process.env.SITE_URL ?? 'http://localhost:3000';
-const HOME_URL = SITE_URL;
+// The wiki has its own origin (doc.knowpeptide.com), served at the root of that
+// subdomain. SITE_URL is the wiki's own canonical origin; WEB_URL is the landing site.
+const SITE_URL = process.env.SITE_URL ?? 'http://localhost:3001';
+const WEB_URL = process.env.WEB_URL ?? 'http://localhost:3000';
 
 const SOCIALS = {
-  discord: 'https://discord.gg/peptidia',
-  x: 'https://x.com/peptidia',
-  reddit: 'https://www.reddit.com/r/peptidia',
-  instagram: 'https://instagram.com/peptidia',
-  tiktok: 'https://www.tiktok.com/@peptidia',
-  youtube: 'https://youtube.com/@peptidia',
-  github: 'https://github.com/peptidia',
+  discord: 'https://discord.gg/knowpeptide',
+  x: 'https://x.com/knowpeptide',
+  reddit: 'https://www.reddit.com/r/knowpeptide',
+  instagram: 'https://instagram.com/knowpeptide',
+  tiktok: 'https://www.tiktok.com/@knowpeptide',
+  youtube: 'https://youtube.com/@knowpeptide',
+  github: 'https://github.com/knowpeptide',
 };
 
 const config: Config = {
-  title: 'Peptidia Wiki',
+  title: 'KnowPeptide Wiki',
   tagline:
     'Evidence-backed peptide intelligence. Clinical research, mechanisms, and anecdote, organized and cited.',
   url: SITE_URL,
-  baseUrl: '/doc/',
-  // Agree with the Next.js app's trailingSlash so the /doc proxy doesn't loop.
+  baseUrl: '/',
   trailingSlash: true,
 
-  organizationName: 'peptidia',
+  organizationName: 'knowpeptide',
   projectName: 'julia',
 
   onBrokenLinks: 'warn',
@@ -41,7 +40,7 @@ const config: Config = {
           // Wiki articles live at the /doc root (no extra /docs segment).
           routeBasePath: '/',
           sidebarPath: './sidebars.ts',
-          editUrl: 'https://github.com/peptidia/julia/edit/main/apps/docs/',
+          editUrl: 'https://github.com/knowpeptide/julia/edit/main/apps/docs/',
           // Re-enable once the repo has commits. It shells out to `git log`.
           // showLastUpdateTime: true,
         },
@@ -70,12 +69,12 @@ const config: Config = {
     ],
     headTags: [
       { tagName: 'meta', attributes: { property: 'og:type', content: 'website' } },
-      { tagName: 'meta', attributes: { property: 'og:site_name', content: 'Peptidia' } },
+      { tagName: 'meta', attributes: { property: 'og:site_name', content: 'KnowPeptide' } },
     ],
     navbar: {
-      title: 'Peptidia',
+      title: 'KnowPeptide',
       items: [
-        { href: HOME_URL, label: 'Home', position: 'left', target: '_self' },
+        { href: WEB_URL, label: 'Home', position: 'left', target: '_self' },
         { type: 'search', position: 'right' },
         { href: SOCIALS.github, label: 'GitHub', position: 'right' },
       ],
@@ -110,7 +109,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: 'Peptidia · educational reference. Not medical advice.',
+      copyright: 'KnowPeptide · educational reference. Not medical advice.',
     },
   } satisfies Preset.ThemeConfig,
 };

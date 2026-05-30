@@ -6,7 +6,7 @@ sidebar_position: 2
 
 # How this wiki works
 
-Peptidia is built around one principle: **trust through transparency**.
+KnowPeptide is built around one principle: **trust through transparency**.
 
 ## Evidence tiers
 

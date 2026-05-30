@@ -22,13 +22,13 @@ const PATHS = {
 } as const;
 
 const SOCIALS: { label: string; href: string; d: string }[] = [
-  { label: 'Discord', href: 'https://discord.gg/peptidia', d: PATHS.discord },
-  { label: 'X', href: 'https://x.com/peptidia', d: PATHS.x },
-  { label: 'Reddit', href: 'https://www.reddit.com/r/peptidia', d: PATHS.reddit },
-  { label: 'Instagram', href: 'https://instagram.com/peptidia', d: PATHS.instagram },
-  { label: 'TikTok', href: 'https://www.tiktok.com/@peptidia', d: PATHS.tiktok },
-  { label: 'YouTube', href: 'https://youtube.com/@peptidia', d: PATHS.youtube },
-  { label: 'GitHub', href: 'https://github.com/peptidia', d: PATHS.github },
+  { label: 'Discord', href: 'https://discord.gg/knowpeptide', d: PATHS.discord },
+  { label: 'X', href: 'https://x.com/knowpeptide', d: PATHS.x },
+  { label: 'Reddit', href: 'https://www.reddit.com/r/knowpeptide', d: PATHS.reddit },
+  { label: 'Instagram', href: 'https://instagram.com/knowpeptide', d: PATHS.instagram },
+  { label: 'TikTok', href: 'https://www.tiktok.com/@knowpeptide', d: PATHS.tiktok },
+  { label: 'YouTube', href: 'https://youtube.com/@knowpeptide', d: PATHS.youtube },
+  { label: 'GitHub', href: 'https://github.com/knowpeptide', d: PATHS.github },
 ];
 
 function BrandIcon({ d, ...props }: SvgIconProps & { d: string }) {

@@ -23,3 +23,7 @@ dist/
 
 # test coverage
 coverage/
+
+# generated / build caches
+next-env.d.ts
+*.tsbuildinfo

@@ -5,7 +5,7 @@ import type { CSSProperties } from 'react';
 // scattered position, rotation, and scale, then settles, carrying the brand
 // gradient. Pure CSS (per-letter custom properties drive the keyframe), so it
 // renders as a server component and degrades to static text under reduced-motion.
-const WORD = 'Peptidia';
+const WORD = 'KnowPeptide';
 
 // Deterministic pseudo-random (no Math.random) so server and client markup match.
 function noise(seed: number): number {

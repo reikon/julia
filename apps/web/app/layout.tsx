@@ -16,7 +16,7 @@ const SITE_URL = process.env.SITE_URL ?? 'http://localhost:3000';
 // Inter, exposed as the --font-sans variable that @julia/tokens' font tokens read.
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans', display: 'swap' });
 
-const TITLE = 'Peptidia: the trusted intelligence network for peptides';
+const TITLE = 'KnowPeptide: the trusted intelligence network for peptides';
 const DESCRIPTION =
   'Evidence-backed, source-cited peptide reference. Clinical research, mechanisms, and anecdote, organized and transparent. Educational only, not medical advice.';
 
@@ -25,10 +25,10 @@ export const metadata: Metadata = {
   title: {
     default: TITLE,
     // Sub-pages set just their own title; this appends the brand.
-    template: '%s | Peptidia',
+    template: '%s | KnowPeptide',
   },
   description: DESCRIPTION,
-  applicationName: 'Peptidia',
+  applicationName: 'KnowPeptide',
   keywords: [
     'peptides',
     'peptide research',
@@ -44,16 +44,16 @@ export const metadata: Metadata = {
     'peptide therapy',
     'evidence-based',
   ],
-  authors: [{ name: 'Peptidia' }],
-  creator: 'Peptidia',
-  publisher: 'Peptidia',
+  authors: [{ name: 'KnowPeptide' }],
+  creator: 'KnowPeptide',
+  publisher: 'KnowPeptide',
   category: 'Health and Science Reference',
   alternates: {
     canonical: '/',
   },
   openGraph: {
     type: 'website',
-    siteName: 'Peptidia',
+    siteName: 'KnowPeptide',
     title: TITLE,
     description: DESCRIPTION,
     url: SITE_URL,
@@ -65,7 +65,7 @@ export const metadata: Metadata = {
         url: '/opengraph-image',
         width: 1200,
         height: 630,
-        alt: 'Peptidia: the trusted intelligence network for peptides.',
+        alt: 'KnowPeptide: the trusted intelligence network for peptides.',
       },
     ],
   },

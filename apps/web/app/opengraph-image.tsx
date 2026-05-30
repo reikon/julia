@@ -4,7 +4,7 @@ import { ImageResponse } from 'next/og';
 // ImageResponse's default font and inline styles only, so the build works offline.
 export const runtime = 'nodejs';
 
-export const alt = 'Peptidia: the trusted intelligence network for peptides.';
+export const alt = 'KnowPeptide: the trusted intelligence network for peptides.';
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 
@@ -56,7 +56,7 @@ export default function OpengraphImage() {
             color: 'transparent',
           }}
         >
-          Peptidia
+          KnowPeptide
         </div>
         <div
           style={{
@@ -119,7 +119,7 @@ export default function OpengraphImage() {
           />
         </div>
         <div style={{ display: 'flex', fontSize: '30px', fontWeight: 600, color: MUTED }}>
-          peptidia
+          knowpeptide.com
         </div>
       </div>
     </div>,
